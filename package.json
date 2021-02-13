@@ -1,0 +1,28 @@
+{
+  "name": "contact-tracer",
+  "version": "1.0.0",
+  "description": "An application for recording user information.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ra-phillips/contact-tracer.git"
+  },
+  "author": "Ranaco Phillips",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ra-phillips/contact-tracer/issues"
+  },
+  "homepage": "https://github.com/ra-phillips/contact-tracer#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15"
+  }
+}

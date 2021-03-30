@@ -1,6 +1,6 @@
 import { fetchWrapper } from '../_helpers';
 
-const API_HOST = "https://contact-tracer-app-05.herokuapp.com"//"http://localhost:5000";
+const API_HOST = "http://localhost:5000";
 const CLIENT_API_URL = `${API_HOST}/clients`;
 
 console.log(CLIENT_API_URL);

@@ -16,7 +16,6 @@ app.get('/',(req,res)=>{
     res.send({message: "We are on home"});
 });
 
-
 //Import Routes
 const clientsRoute = require('./routes/clients');
 const employeesRoute = require('./routes/employees');
@@ -26,8 +25,16 @@ app.use('/clients',clientsRoute);
 app.use('/employees',employeesRoute);
 app.use('/employeesLog',employeesLogRoute);
 
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
 
-//Connect to DB jY1brHxgg3zbOgNk
+//Connect to DB 
 mongoose.connect('mongodb+srv://RPhillips:'
     + process.env.MONGO_ATLAS_PW + 
     '@contact-tracer-cluster1.k94fe.mongodb.net/ContactDB?retryWrites=true&w=majority',

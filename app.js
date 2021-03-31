@@ -4,6 +4,10 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv/config');
 
+const clientsRoute = require('./routes/clients');
+const employeesRoute = require('./routes/employees');
+const employeesLogRoute = require('./routes/employeeLogs');
+
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -26,10 +30,6 @@ mongoose.connect('mongodb+srv://RPhillips:'
 );
 
 //Import Routes
-const clientsRoute = require('./routes/clients');
-const employeesRoute = require('./routes/employees');
-const employeesLogRoute = require('./routes/employeeLogs');
-
 app.use('/clients',clientsRoute);
 app.use('/employees',employeesRoute);
 app.use('/employeesLog',employeesLogRoute);

@@ -1,17 +1,21 @@
 import { fetchWrapper } from '../_helpers';
 
 //const API_HOST = "http://localhost:5000";
-const CLIENT_API_URL = `/clients`;
+const CLIENT_API_URL = '/clients';
 
-console.log(CLIENT_API_URL);
+//console.log(CLIENT_API_URL);
 
 export const clientService = {
+    getAllPost,
     getAll,
     getById,
     create,
     update,
     delete: _delete
 };
+function getAllPost() {
+    return fetchWrapper.getPost(CLIENT_API_URL);
+}
 
 function getAll() {
     return fetchWrapper.get(CLIENT_API_URL);

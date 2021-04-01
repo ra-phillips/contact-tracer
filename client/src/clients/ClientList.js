@@ -42,7 +42,7 @@ function List({history, match }) {
     };
 
     useEffect(() => {
-      clientService.getAll().then(x => setClients(x));
+      clientService.getAllPost().then(x => setClients(x));
     }, []);
 
 
@@ -84,7 +84,7 @@ function List({history, match }) {
                     className="float-right rounded-pill mr-2" 
                     > 
                       <i className="fas fa-download"></i>
-                      <CSVLink {...csvReport} className="text-light export-btn"> Export to CSV</CSVLink>
+                      {/* <CSVLink {...csvReport} className="text-light export-btn"> Export to CSV</CSVLink> */}
                   </Button>     
                 </Col>
               </Row>

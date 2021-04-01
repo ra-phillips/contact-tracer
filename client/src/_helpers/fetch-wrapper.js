@@ -1,9 +1,25 @@
+import {useState} from 'react';
 import axios from 'axios'
 export const fetchWrapper = {
+    getPost,
     get,
     post,
     put,
     delete: _delete
+}
+
+function getPost (url){
+
+    return axios.get(url)    
+    .then(res =>{
+        //console.log('Data has been received!!');
+        // state = handleResponse;
+        //console.log(res.data);
+        return res.data;
+    })
+    .catch(() =>{
+        console.log("Data has been caught!!");
+    });
 }
 
 async function get(url) {

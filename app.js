@@ -17,9 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //Connect to DB 
-mongoose.connect('mongodb+srv://RPhillips:'
-    + process.env.MONGO_ATLAS_PW + 
-    '@contact-tracer-cluster1.k94fe.mongodb.net/ContactDB?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGODB_URI,
     { 
         useUnifiedTopology: true, 
         useNewUrlParser: true, 

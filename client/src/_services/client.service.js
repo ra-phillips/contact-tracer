@@ -1,7 +1,7 @@
 import { fetchWrapper } from '../_helpers';
 
-const API_HOST = "http://localhost:5000";
-const CLIENT_API_URL = `${API_HOST}/clients`;
+//const API_HOST = "http://localhost:5000";
+const CLIENT_API_URL = `/clients`;
 
 console.log(CLIENT_API_URL);
 

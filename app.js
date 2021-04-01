@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-
 //Connect to DB 
 mongoose.connect('mongodb+srv://RPhillips:'
     + process.env.MONGO_ATLAS_PW + 

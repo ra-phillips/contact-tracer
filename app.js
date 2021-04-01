@@ -20,7 +20,11 @@ app.use(express.urlencoded({extended: false}));
 mongoose.connect('mongodb+srv://RPhillips:'
     + process.env.MONGO_ATLAS_PW + 
     '@contact-tracer-cluster1.k94fe.mongodb.net/ContactDB?retryWrites=true&w=majority',
-    { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true},
+    { 
+        useUnifiedTopology: true, 
+        useNewUrlParser: true, 
+        useCreateIndex: true
+    },
     () => console.log("MongoDB database connection established successfully")
 );
 

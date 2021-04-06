@@ -13,8 +13,8 @@ export const clientService = {
     update,
     delete: _delete
 };
-function getAllPost() {
-    return fetchWrapper.getPost(CLIENT_API_URL);
+async function getAllPost() {
+    return await fetchWrapper.getPost(CLIENT_API_URL);
 }
 
 function getAll() {

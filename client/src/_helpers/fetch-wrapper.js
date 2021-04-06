@@ -8,18 +8,14 @@ export const fetchWrapper = {
     delete: _delete
 }
 
-function getPost (url){
-
-    return axios.get(url)    
-    .then(res =>{
-        //console.log('Data has been received!!');
-        // state = handleResponse;
-        //console.log(res.data);
-        return res.data;
-    })
-    .catch(() =>{
-        console.log("Data has been caught!!");
-    });
+async function getPost (url){
+    try{
+        const response = await axios.get(url);
+        return response.data;
+    }
+    catch (error){
+        console.log(error);
+    }
 }
 
 async function get(url) {

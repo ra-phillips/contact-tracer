@@ -3,21 +3,16 @@ const Client = require('../models/Client');
 const router = express.Router();
 
 //Get All clients
-// router.get('/', async (req,res)=>{
-//     try{
-//         const clients = await Client.find().sort({ date: -1 });
-//         res.status(200).json(clients);
-//     }
-//     catch(err){
-//         res.status(500).json({message: err});
-//     }
-// });
-
-router.get('/', (req,res) => {
-    Client.find()
-    .sort({ date: -1 })
-    .then(clients => res.json(clients));
+router.get('/', async (req,res)=>{
+    try{
+        const clients = await Client.find().sort({ date: -1 });
+        res.status(200).json(clients);
+    }
+    catch(err){
+        res.status(500).json({message: err});
+    }
 });
+
 
 //Submit a client
 router.post('/', async (req,res)=>{
